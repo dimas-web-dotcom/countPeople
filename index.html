@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-800 flex justify-center px-5">
+
+    <div class="container max-w-sm bg-white box-border p-5 text-center mt-10 rounded-md">
+        <h2 class="font-bold text-2xl">People Entered:</h2>
+        <h2 class="num font-bold text-3xl">0</h2>
+        <button class="increment-btn bg-red-700 px-5 py-2 rounded-md font-semibold text-white">INCREMENT</button> <br>
+        <button class="save-btn bg-green-700 px-11 py-2 rounded-md font-semibold text-white mt-3">SAVE</button>
+
+        <p class="result">Previous people : </p>
+
+
+    </div>
+
+
+    <script>
+        const increment = document.querySelector('.increment-btn');
+        const save = document.querySelector('.save-btn');
+        const previous = document.querySelector('.result');
+        let num = document.querySelector('.num');
+        let value = 0;
+        increment.addEventListener('click', () => {
+            value++;
+            num.innerText = value;
+        });
+
+        save.addEventListener('click', () => {
+            previous.innerHTML += ` ${value} - `;
+            value = 0;
+            num.innerText = value;
+            
+        });
+
+    </script>
+</body>
+</html>
